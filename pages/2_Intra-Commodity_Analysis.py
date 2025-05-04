@@ -81,3 +81,4 @@ else:
 
     st.plotly_chart(fig, use_container_width=True)
 
+insert_side_bar()

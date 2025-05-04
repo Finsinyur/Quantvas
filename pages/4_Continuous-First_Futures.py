@@ -88,7 +88,7 @@ else:
         row2_col3.metric("Sharpe Ratio", f"{sharpe_ratio:.1%}")
         row2_col4.metric("Max Drawdown", f"{np.round(maxdrawdown,0)}")
 
-
+insert_side_bar()
 
 
 

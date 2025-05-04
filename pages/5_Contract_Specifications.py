@@ -46,3 +46,4 @@ df_product_specs =\
 
 
 st.dataframe(df_product_specs, use_container_width=True, height=600)
+insert_side_bar()

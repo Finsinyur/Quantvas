@@ -107,3 +107,6 @@ st.write("""
          One needs to construct the pair with an appropriate hedge ratio.
          For commodities, one needs to be cognizant of other factors that may or may not be tradable, such as freight.
          """)
+
+
+insert_side_bar()
