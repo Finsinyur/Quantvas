@@ -1,5 +1,6 @@
 import streamlit as st
 from utils.data_loader import load_spec
+from utils.sidebar import insert_side_bar
 import pandas as pd
 
 st.title("📃 Contract Specification")

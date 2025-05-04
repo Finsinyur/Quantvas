@@ -1,5 +1,6 @@
 import streamlit as st
 from utils.data_loader import load_data
+from utils.sidebar import insert_side_bar
 from utils.futures_engine import futures_adjustment, get_performance_metrics
 import plotly.express as px
 import plotly.graph_objects as go

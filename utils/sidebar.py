@@ -2,7 +2,7 @@ import streamlit as st
 
 def insert_side_bar():
     st.sidebar.caption(
-        "© 2025 Finsinyur. All rights reserved.."
+        "© 2025 Finsinyur. All rights reserved."
     )
 
     linkedin = "https://raw.githubusercontent.com/Finsinyur/Quantvas/blob/main/img/linkedin.gif"
