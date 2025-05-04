@@ -25,7 +25,7 @@ columns = ['F', 'G', 'H', 'J', 'K', 'M', 'N', 'Q', 'U', 'V', 'X', 'Z']
 
 df_mnemonic = pd.DataFrame(data = data, columns= columns, index = ['Mnemonic'])
 
-st.table(df_mnemonic)
+st.dataframe(df_mnemonic)
 
 st.header('Full Contract Details')
 df = load_spec()

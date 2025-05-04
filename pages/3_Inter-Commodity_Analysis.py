@@ -103,6 +103,6 @@ st.markdown("""
 st.write("""
          An inter-commodity pair trade is generally a trade that bets on mean-reversion.
          Therefore, when dealing with intercommodity spread, one needs to be careful with the spread leg construction. 
-         One needs to construct the pair with an appropriate hedge ratios.
-         For commodities, one need to be cognizant of other factors that may or may not be tradable, such as freight.
+         One needs to construct the pair with an appropriate hedge ratio.
+         For commodities, one needs to be cognizant of other factors that may or may not be tradable, such as freight.
          """)

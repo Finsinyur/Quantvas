@@ -1,9 +1,10 @@
 import streamlit as st
 from utils.data_loader import load_data
-from utils.futures_engine import futures_adjustment
+from utils.futures_engine import futures_adjustment, get_performance_metrics
 import plotly.express as px
 import plotly.graph_objects as go
 import plotly.express as px
+import numpy as np
 
 st.title("📈 Continuous-First futures")
 df = load_data()
@@ -67,4 +68,26 @@ else:
     )
 
     st.plotly_chart(fig, use_container_width=True)
+
+    st.header("Performance Metrics")
+    st.subheader("Unadjusted front month futures")
+    row1_col1, row1_col2, row1_col3, row1_col4 = st.columns(4)
+    total_return, volatility, sharpe_ratio, maxdrawdown = get_performance_metrics(plot_df, "Unadjusted Price")
+    row1_col1.metric("Total Return", f"{total_return}")
+    row1_col2.metric("Volatility", f"{volatility}")
+    row1_col3.metric("Sharpe Ratio", f"{sharpe_ratio}")
+    row1_col4.metric("Max Drawdown", f"{maxdrawdown}")
+
+    if selected_adjustment:
+        st.subheader("Adjusted front month futures")
+        row2_col1, row2_col2, row2_col3, row2_col4 = st.columns(4)
+        total_return, volatility, sharpe_ratio, maxdrawdown = get_performance_metrics(plot_df, selected_adjustment)
+        row2_col1.metric("Total Return", f"{total_return}")
+        row2_col2.metric("Volatility", f"{volatility}")
+        row2_col3.metric("Sharpe Ratio", f"{sharpe_ratio}")
+        row2_col4.metric("Max Drawdown", f"{maxdrawdown}")
+
+
+
+
 

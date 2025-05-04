@@ -69,3 +69,20 @@ def futures_adjustment(df, selected_product, adjustment_algo):
     c1.reset_index(drop = True, inplace=True)
 
     return c1
+
+
+def get_performance_metrics(df, label):
+    price_series = df.loc[df['label'] == label, 'daily_settle_price'].copy()
+    initial_price = price_series.iloc[0]
+    final_price = price_series.iloc[-1]
+
+    total_return = final_price / initial_price - 1
+    return_series = price_series.pct_change()
+    volatility = return_series.std() * np.sqrt(252)
+    sharpe_ratio = np.mean(return_series) / volatility
+
+    watermark = price_series.cummax()
+    drawdowns = watermark - price_series
+    maxdrawdown = drawdowns.max()
+
+    return total_return, volatility, sharpe_ratio, maxdrawdown
