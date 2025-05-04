@@ -8,8 +8,10 @@ st.header("Contract Mnemonic")
 st.write(
     """
 Every future contracts are represented by its ticker (e.g. SGP) followed by its contract mnemonic (e.g. F20).
+
 The contract mnemonic is short-form to represent the settlement date of the respective futures.
 It comes with an alphabet that represents the settlement month (see table below), followed by the settlement year (YY).
+
 One misconception is that the settlement month is the same as the expiration month. 
 While this is the case for certain asset classes (e.g. Equity indices), this is not the case for others.
 For instance, the Brent Crude oil futures are quoted on a M-2 basis, i.e. a M20 futures settled on March 2020 expires on January 2020.
@@ -34,7 +36,7 @@ tmp_df = df[df['expiration_date'].dt.year == 2020].copy()
 df_product_specs =\
     pd.pivot_table(
         data = tmp_df,
-        index = ["exch_code", "underlying", "asset_class", "contract_size", "contract_price_unit"],
+        index = ["exch_code", "exchange", "underlying", "asset_class", "contract_size", "contract_price_unit"],
         columns= "contract_code",
         values="expiration_date",
         aggfunc=lambda x: x.iloc[0].strftime("%d/%m/%Y") if not x.empty else None
