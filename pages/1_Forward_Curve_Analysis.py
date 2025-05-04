@@ -1,5 +1,6 @@
 import streamlit as st
 from utils.data_loader import load_data
+from utils.sidebar import insert_side_bar
 import plotly.express as px
 import plotly.graph_objects as go
 import plotly.express as px
@@ -92,3 +93,5 @@ st.write(
     Test
     """
     )
+
+insert_side_bar()

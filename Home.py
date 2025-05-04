@@ -1,4 +1,5 @@
 import streamlit as st
+from utils.sidebar import insert_side_bar
 
 # Streamlit UI
 st.title("📊 Quantvas: Futures Analytics Dashboard")
@@ -55,27 +56,6 @@ It also offers key information on the contracts, such as the ticker, exchange of
 ) 
 
 
-st.sidebar.caption(
-    "© 2023 Finsinyur. All rights reserved.."
-)
-
-linkedin = "https://raw.githubusercontent.com/sahirmaharaj/exifa/main/img/linkedin.gif"
-main = "https://raw.githubusercontent.com/sahirmaharaj/exifa/main/img/topmate.gif"
-email = "https://raw.githubusercontent.com/sahirmaharaj/exifa/main/img/email.gif"
-quantsimplified = (
-    "https://raw.githubusercontent.com/sahirmaharaj/exifa/main/img/newsletter.gif"
-)
-
-st.sidebar.caption(
-    f"""
-        <div style='display: flex; align-items: center;'>
-            <a href = 'https://www.linkedin.com/in/leecaden/'><img src='{linkedin}' style='width: 35px; height: 35px; margin-right: 25px;'></a>
-            <a href = 'https://www.quantcollective.io/'><img src='{main}' style='width: 32px; height: 32px; margin-right: 25px;'></a>
-            <a href = 'mailto:caden.finsinyur@gmail.com'><img src='{email}' style='width: 28px; height: 28px; margin-right: 25px;'></a>
-            <a href = 'https://caden-finsinyur.medium.com/'><img src='{quantsimplified}' style='width: 28px; height: 28px; margin-right: 25px;'></a>
-        </div>
-        """,
-    unsafe_allow_html=True,
-)
+insert_side_bar()
 
 
