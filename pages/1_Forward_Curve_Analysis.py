@@ -9,7 +9,6 @@ import plotly.express as px
 st.title("📈 Forward Curve Analysis")
 df = load_data()
 
-
 # --- Sidebar Inputs ---
 st.sidebar.header("🔧 Filters")
 

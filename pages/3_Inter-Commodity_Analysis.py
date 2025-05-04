@@ -4,7 +4,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import plotly.express as px
 
-st.title("📈 Inter-Commodity Pair Analysis")
+st.title("⚖️ Inter-Commodity Pair Analysis")
 
 df = load_data()
 df_ts = df[df['expiration_date'].dt.year == 2020].copy()

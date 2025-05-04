@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 import numpy as np
 
-st.title("📈 Continuous-First futures")
+st.title("1️⃣ Continuous-First futures")
 df = load_data()
 
 # --- Sidebar Inputs ---

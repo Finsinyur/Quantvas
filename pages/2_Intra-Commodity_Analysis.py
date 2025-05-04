@@ -4,7 +4,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import plotly.express as px
 
-st.title("📈 Intra-Commodity Spread Analysis")
+st.title("🕝 Intra-Commodity Spread Analysis")
 df = load_data()
 df_ts = df[df['expiration_date'].dt.year == 2020].copy()
 df_ts['expiration_month'] = df_ts['expiration_date'].dt.strftime("%Y-%m-01")
