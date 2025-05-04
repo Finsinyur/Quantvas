@@ -56,6 +56,7 @@ def futures_adjustment(df, selected_product, adjustment_algo):
         tmp_adj = tmp_c1.copy()
         if adjustment_algo == 'Forward Adjustment':
             tmp_adj['adjustment'] = tmp_adj['roll_spread'].cumsum()
+            tmp_adj['adjustment'] *= -1
 
         elif adjustment_algo == 'Backward Adjustment':
             tmp_adj['adjustment'] = tmp_adj['roll_spread'][::-1].cumsum()[::-1]
