@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import psycopg2
 
+@st.cache_data()
 def load_data():
     # Get the PostgreSQL URL
     database_url = st.secrets["database_url"]
@@ -20,6 +21,7 @@ def load_data():
     connection.close()
     return df
 
+@st.cache_data()
 def load_spec():
     database_url = st.secrets["database_url"]
 
