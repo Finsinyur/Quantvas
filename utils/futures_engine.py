@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 def futures_adjustment(df, selected_product, adjustment_algo):
     tmp_df = df.copy()
