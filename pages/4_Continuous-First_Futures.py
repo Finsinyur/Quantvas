@@ -73,19 +73,19 @@ else:
     st.subheader("Unadjusted front month futures")
     row1_col1, row1_col2, row1_col3, row1_col4 = st.columns(4)
     total_return, volatility, sharpe_ratio, maxdrawdown = get_performance_metrics(plot_df, "Unadjusted Price")
-    row1_col1.metric("Total Return", f"{total_return}")
-    row1_col2.metric("Volatility", f"{volatility}")
-    row1_col3.metric("Sharpe Ratio", f"{sharpe_ratio}")
-    row1_col4.metric("Max Drawdown", f"{maxdrawdown}")
+    row1_col1.metric("Total Return", f"{total_return:.1f%}")
+    row1_col2.metric("Volatility", f"{volatility:.1f%}")
+    row1_col3.metric("Sharpe Ratio", f"{sharpe_ratio:.1f%}")
+    row1_col4.metric("Max Drawdown", f"{maxdrawdown:.1f%}")
 
     if selected_adjustment:
         st.subheader("Adjusted front month futures")
         row2_col1, row2_col2, row2_col3, row2_col4 = st.columns(4)
         total_return, volatility, sharpe_ratio, maxdrawdown = get_performance_metrics(plot_df, selected_adjustment)
-        row2_col1.metric("Total Return", f"{total_return}")
-        row2_col2.metric("Volatility", f"{volatility}")
-        row2_col3.metric("Sharpe Ratio", f"{sharpe_ratio}")
-        row2_col4.metric("Max Drawdown", f"{maxdrawdown}")
+        row2_col1.metric("Total Return", f"{total_return:.1f%}")
+        row2_col2.metric("Volatility", f"{volatility:.1f%}")
+        row2_col3.metric("Sharpe Ratio", f"{sharpe_ratio:.1f%}")
+        row2_col4.metric("Max Drawdown", f"{maxdrawdown:.1f%}")
 
 
 
