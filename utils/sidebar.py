@@ -5,11 +5,11 @@ def insert_side_bar():
         "© 2025 Finsinyur. All rights reserved.."
     )
 
-    linkedin = "https://github.com/Finsinyur/Quantvas/blob/main/img/linkedin.gif"
-    main = "https://github.com/Finsinyur/Quantvas/blob/main/img/main.gif"
-    email = "https://github.com/Finsinyur/Quantvas/blob/main/img/email.gif"
+    linkedin = "https://raw.githubusercontent.com/Finsinyur/Quantvas/blob/main/img/linkedin.gif"
+    main = "https://raw.githubusercontent.com/Finsinyur/Quantvas/blob/main/img/main.gif"
+    email = "https://raw.githubusercontent.com/Finsinyur/Quantvas/blob/main/img/email.gif"
     quantsimplified = (
-        "https://github.com/Finsinyur/Quantvas/blob/main/img/blog.gif"
+        "https://raw.githubusercontent.com/Finsinyur/Quantvas/blob/main/img/blog.gif"
     )
 
     st.sidebar.caption(
