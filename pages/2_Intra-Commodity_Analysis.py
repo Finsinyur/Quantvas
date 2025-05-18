@@ -31,9 +31,6 @@ start_date, end_date = st.sidebar.slider(
     value=(min_date, max_date)
 )
 
-# Normalize checkbox
-normalize = st.sidebar.checkbox("Normalize Prices")
-
 # --- Data Filtering ---
 mask = (
     (df_ts['exch_code'] == selected_product) &
@@ -43,18 +40,11 @@ mask = (
 )
 filtered_df = df_ts[mask]
 
-# Normalize if requested
-if normalize and not filtered_df.empty:
-    filtered_df['daily_settle_price'] = (
-        filtered_df.groupby(['exch_code', 'contract_code'])['daily_settle_price']
-        .transform(lambda x: x / x.iloc[0] * 100)
-    )
-
 # --- Plot ---
 if filtered_df.empty:
     st.warning("No data for the selected filters.")
 else:
-    fig = px.line(
+    fig_main = px.line(
         filtered_df,
         x='date',
         y='daily_settle_price',
@@ -65,7 +55,7 @@ else:
         template='ggplot2'
     )
 
-    fig.update_layout(
+    fig_main.update_layout(
         width=1000,
         height=500,
         margin=dict(l=40, r=40, t=40, b=40),
@@ -79,6 +69,19 @@ else:
         )
     )
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig_main, use_container_width=True)
+
+    fig_cal_spread = px.line(
+        filtered_df,
+        x='date',
+        y='daily_settle_price',
+        color='exch_code',
+        line_dash='contract_code',
+        hover_data=['date', 'underlying', 'exch_code', 'daily_settle_price'],
+        title='Futures time series: {}'.format(selected_product),
+        template='ggplot2'
+    )
+
+
 
 insert_side_bar()

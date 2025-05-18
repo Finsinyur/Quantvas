@@ -38,7 +38,7 @@ st.write(
 The Inter-Commodity Analysis allows user to compare the price difference between two futures of the same expiry.
 """
 ) 
-st.subheader("⚖️ Continuous-First Futures")
+st.subheader("1️⃣ Continuous-First Futures")
 st.write(
     """
 The Continuous-first futures allows user to sttch different expiries together to form a continuous front month contract.
@@ -47,7 +47,7 @@ It also displays the key performance metrics, assuming a simple buy-and-hold str
 """
 ) 
 
-st.subheader("⚖️ Contract Specifications")
+st.subheader("📃 Contract Specifications")
 st.write(
     """
 The Contract Specifications page provides a clear explanation of the convention used in the futures industry. 
