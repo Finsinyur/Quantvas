@@ -82,7 +82,7 @@ def get_performance_metrics(df, label):
     total_return = final_price / initial_price - 1
     return_series = price_series.pct_change()
     volatility = return_series.std() * np.sqrt(252)
-    sharpe_ratio = np.mean(return_series) / return_series.std() * np.sqrt(252)
+    sharpe_ratio = np.mean(return_series) / return_series.std()
 
     watermark = price_series.cummax()
     drawdowns = watermark - price_series
