@@ -85,7 +85,7 @@ else:
         total_return, volatility, sharpe_ratio, maxdrawdown = get_performance_metrics(plot_df, selected_adjustment)
         row2_col1.metric("Total Return", f"{total_return:.1%}")
         row2_col2.metric("Volatility", f"{volatility:.1%}")
-        row2_col3.metric("Sharpe Ratio", f"{sharpe_ratio:.1%}")
+        row2_col3.metric("Sharpe Ratio", f"{sharpe_ratio:.2f}")
         row2_col4.metric("Max Drawdown", f"{np.round(maxdrawdown,0)}")
 
 insert_side_bar()
